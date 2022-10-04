@@ -1,6 +1,27 @@
-.body{
-    font-family: Verdana, Geneva, Tahoma, sans-serif
-    color #860c0c;
-    font-size:larger;
-    background-color: aqua;
-}
+body {
+    font-family: 'Darker Grotesque', sans-serif;
+  }
+  
+  .weather-h1 {
+    color: #B03B37;
+    font-weight: bolder;
+  }
+  
+  .card-header {
+    background: #FBAB34;
+    text-align: center;
+  }
+  
+  #searchCityName {
+    width: 75%;
+  }
+  
+  .flex {
+    display: flex;
+    flex-direction: column;
+    align-items: baseline;
+  }
+  
+  .wicon {
+    width: 50%;
+  }
