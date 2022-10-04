@@ -27,3 +27,37 @@ function loadLocalStorage() {
     }
   }
 }
+
+/* search city function */
+function searchCity(search) {
+    search.preventDefault();
+  
+    var searchCityName = document.getElementById("searchCityName").value;
+  
+    if (searchCityName) {
+      currentForecast(searchCityName);
+      cityInput.value = "";
+      saveCitySearch(searchCityName);
+      loadLocalStorage();
+    } else {
+      alert("No City Entered")
+    }
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
