@@ -1,7 +1,7 @@
-/* variables */
+/* Variables */
 var apiKey = "708b801eb3ec231e80bf6c6a79e0fafb";
-var apiUrl = "api.openweathermap.org/data/2.5/forecast?lat={lat}&lon=";
-var geoApiUrl = "api.openweathermap.org/data/2.5/forecast?q=";
+var apiUrl = "https://api.openweathermap.org/data/2.5/forecast?lat={lat}&lon={lon}&appid={API key}";
+var geoApiUrl = "https://openweathermap.org/forecast5";
 var exclude = "&exclude=minutely,hourly,alerts&units=imperial";
 var searchBtn = $("#searchBtn");
 var clearBtn = $("#clearBtn");
@@ -10,7 +10,7 @@ var cityInput = $("#searchCityName");
 var cityExample = "Phoenix";
 var day = 1;
 
-/* load from local storage function */
+/* Load From Local Storage */
 function loadLocalStorage() {
     var storedArray = localStorage.getItem("citySearchStorage") ? JSON.parse(localStorage.getItem("citySearchStorage")) : []
   
@@ -103,7 +103,58 @@ function currentForecast(currentCity) {
 })
 }
 
+/* 5 day forecast function */
+function futureForecast(futureData) {
 
+    /* 5 day forecast cardZ */
+      $("#fiveDayForecast").empty();
+      for (var i = 1; i < 6; i++) {
+        /* display date using moment.js */
+        var date = new Date(futureData.daily[i].dt * 1000)
+  
+        /* dynamically creates 5 day forecast cards */
+        var forecastCard = $("<div class='card col-md-2 col-sm-12 mb-2 card-forecast'></div>")
+        forecastCard.html(`<div class="card-body forecast">
+        <h6 class="card-title" id="d1">${moment(date).format("ddd, M/D")}</h6>
+        <img alt="weather icon" src="http://openweathermap.org/img/w/${futureData.daily[i].weather[0].icon}.png"
+        <br>
+        <p class="card-subtitle pb-2">Temp: ${futureData.daily[i].temp.day} \u00B0F</p>
+        <p class="card-subtitle pb-2">Wind Speed: ${futureData.daily[i].wind_speed} MPH</p>
+        <p class="card-subtitle pb-2">Humidity: ${futureData.daily[i].humidity} %</p>
+        </div>`);
+        $("#fiveDayForecast").append(forecastCard);
+        day++
+    }
+  }
+  
+  /* save local storage function */
+  function saveCitySearch(currentCity) {
+    var citySearchStorage = localStorage.getItem("citySearchStorage");
+  
+    if (citySearchStorage) {
+      var storedArray = JSON.parse(citySearchStorage);
+  
+      if (!storedArray.includes(currentCity)) {
+        storedArray.push(currentCity);
+        localStorage.setItem("citySearchStorage", JSON.stringify(storedArray));
+      }
+    } else {
+      localStorage.setItem("citySearchStorage", JSON.stringify([currentCity]));
+    }
+  }
+  
+  /* clear local storage function + event listener */
+  $("#clearBtn").on("click", function () {
+    var localStor = $(this).siblings("#searchHistoryList").text("");
+    localStorage.removeItem("citySearchStorage", localStor);
+  });
+  
+  
+  currentForecast(cityExample);
+  loadLocalStorage();
+  
+  /* event listeners */
+  searchBtn.on("click", searchCity);
 
 
 

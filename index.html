@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -22,7 +23,7 @@
 </head>
 <body>
     <main class="container">
-        <h1><i class="fa-solid fa-temperature-quarter"></i><span class="weather-h1">Weather </span> Dashboard</h1>
+        <h1><i class="fa-solid fa-temperature-quarter"></i><span class="weather-h1">Weather </span> Forcast</h1>
         <div class="row">
             <aside class="col-sm-3">
 
@@ -44,7 +45,7 @@
       </aside>
 
       <section class="col-sm-9 container">
-        <div class="col-md-12 col-sm-12">
+        <div class="col-md-12 col-sm-12"></div>
 
              <!-- Current Weather Data -->
           <div class="card border-2 border-dark bg-transparent">
@@ -65,16 +66,24 @@
                   </div>
                 </div>
                 <div class="w-50">
-                  <img src="" alt="weather icon" class="wicon">
+                  <img src="NONE" alt="weather icon" class="wicon">
                 </div>
               </div>
             </div>
           </div>
+       
+          <!-- 5 day forecast section -->
+       <div class="card bg-transparent mt-5 border-0"></div>
+        <h3 class="five-forecast-title text-center card-header">5 Day Weather Forecast</h3>
+        <div class="row d-flex justify-content-around" id="fiveDayForecast">
+          <!-- INSERT CARDS WITH JS FOR NEXT 5 DAYS -->
+        </div>
+    </section>
 
-    </main>
-    
+    </div>
+ </main>
 
-    <!-- jQuery link -->
+     <!-- jQuery link -->
 <script src="https://code.jquery.com/jquery-3.6.0.slim.min.js"
 integrity="sha256-u7e5khyithlIdTpu22PHhENmPcRdFiHRjhAuHcs05RI=" crossorigin="anonymous">
 </script>
