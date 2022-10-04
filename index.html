@@ -18,18 +18,31 @@
 <!--FavIcon-->
 <link rel="manifest" href="./assets/images/favicon_io/site.webmanifest">
 <!-- CSS file -->
-<link rel="stylesheet" href="assets/style.css" />
+<link rel="stylesheet" href="assets/style.css"/>
     <title>WEATHER FORCAST</title>
 </head>
+
 <body>
+    
     <main class="container">
         <h1><i class="fa-solid fa-temperature-quarter"></i><span class="weather-h1">Weather </span> Forcast</h1>
         <div class="row">
+            
+            
             <aside class="col-sm-3">
-
                 <!--Search City-->
                 <div class="card">
-                    <div class="card-body" id="searchHistory">
+                    <h3 class="card-header">Search By City</h3>
+                    <form id="search-form" class="card-body">
+                      <label class="form-label" for="cityName"></label>
+                      <input name="cityName" id="searchCityName" type="text" autofocus="true" />
+                      <button id="searchBtn" class="btn px-3"><i class="fa-solid fa-magnifying-glass-location"></i></button>
+                    </form>
+                  </div>
+                 
+                  <!--Search History-->
+                <div class="card"> 
+                  <div class="card-body" id="searchHistory">
                       <div id="search-history-card" class="card border-light">
                         <h4 id="search-history-header" class="card-header">Recent Searches</h4>
                     
@@ -38,11 +51,11 @@
 
                         <!--Clear Search History-->
                         <button id="clearBtn" class="btn px-5"><i class="fa-solid fa-eraser"></i></button>
-              </div>
+                    </div>
+                </div>
+             </div>
             </div>
-          </div>
-        </div>
-      </aside>
+         </aside>
 
       <section class="col-sm-9 container">
         <div class="col-md-12 col-sm-12"></div>

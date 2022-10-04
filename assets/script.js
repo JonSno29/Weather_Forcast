@@ -100,7 +100,7 @@ function currentForecast(currentCity) {
          futureForecast(currentData);
         })
     })
-})
+});
 }
 
 /* 5 day forecast function */
