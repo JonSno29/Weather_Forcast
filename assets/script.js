@@ -22,13 +22,13 @@ function loadLocalStorage() {
         searchItem.on("click", function () {
           currentForecast($(this).text())
         })
-        /* access search history items */
+        /* Access Search History */
       $("#searchHistoryList").append(searchItem);
     }
   }
 }
 
-/* search city function */
+/* Search City */
 function searchCity(search) {
     search.preventDefault();
   
@@ -43,6 +43,24 @@ function searchCity(search) {
       alert("No City Entered")
     }
   }
+
+  /* current weather function */
+function currentForecast(currentCity) {
+
+    /* fetching geoApiUrl */
+    fetch(geoApiUrl + currentCity + "&appid=" + apiKey).then(function (response) {
+      response.json().then(function (data) {
+        
+        /* using lat and lon from geoApiUrl and entering into onecall apiUrl */
+        fetch(apiUrl + "lat=" + data[0].lat + "&lon=" + data[0].lon + exclude + "&appid=" + apiKey).then(function (weatherData) {
+          return weatherData.json();
+        }).then(function (currentData) {
+          console.log(currentData);
+        })
+    })
+})
+}
+
 
 
 
