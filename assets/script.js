@@ -56,10 +56,53 @@ function currentForecast(currentCity) {
           return weatherData.json();
         }).then(function (currentData) {
           console.log(currentData);
+        
+         /* USE MOMENT.JS TO SHOW DATE */
+         var currentDate = new Date(currentData.current.dt * 1000);
+         /* display searched city name */
+         $("#city-search").text(
+           currentCity + " " + moment(currentDate).format("dddd, MMMM Do YYYY")
+         );
+         /* add icon */
+         var iconCode = currentData.current.weather[0].icon;
+         $(".wicon").attr(
+           "src",
+           `http://openweathermap.org/img/w/${iconCode}.png`
+         );
+         /* display current */
+         $("#temp-now").text(
+           "Temperature: " + currentData.current.temp + " \u00B0F"
+         );
+         /* display current wind speed */
+         $("#wind-now").text(
+           "Wind Speed: " + currentData.current.wind_speed + " MPH"
+         );
+         /* display current humidity */
+         $("#humidity-now").text(
+           "Humidity: " + currentData.current.humidity + " %"
+         );
+         /* display current uv index */
+         $("#uv-now").text(currentData.current.uvi);
+ 
+         //* uv level styling */
+         var uvClassName = "";
+         if (currentData.current.uvi < 3) {
+           uvClassName = "uvGreen";
+         } else if (currentData.current.uvi > 3 && currentData.current.uvi < 6) {
+           uvClassName = "uvYellow";
+         } else {
+           uvClassName = "uvRed";
+         }
+         $("#uv-now").removeClass("uvGreen uvYellow uvRed");
+         $("#uv-now").addClass(uvClassName);
+ 
+         /* call 5 day forecast function */
+         futureForecast(currentData);
         })
     })
 })
 }
+
 
 
 
