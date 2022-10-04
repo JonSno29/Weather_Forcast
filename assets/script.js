@@ -9,3 +9,21 @@ var searchForm = $("#search-form");
 var cityInput = $("#searchCityName");
 var cityExample = "Phoenix";
 var day = 1;
+
+/* load from local storage function */
+function loadLocalStorage() {
+    var storedArray = localStorage.getItem("citySearchStorage") ? JSON.parse(localStorage.getItem("citySearchStorage")) : []
+  
+    $("#searchHistoryList").empty();
+    var searchLength = storedArray.length
+    for (var i = searchLength - 1; i >= 0; i--) {
+      if (i > searchLength - 11) {
+        var searchItem = $(`<p class = "text-uppercase">${storedArray[i]}</p>`)
+        searchItem.on("click", function () {
+          currentForecast($(this).text())
+        })
+        /* access search history items */
+      $("#searchHistoryList").append(searchItem);
+    }
+  }
+}
