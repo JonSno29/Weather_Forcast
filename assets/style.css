@@ -25,3 +25,62 @@ body {
   .wicon {
     width: 50%;
   }
+
+  /* uv styling */
+.uvRed {
+    background-color: red;
+    color: white;
+    font-weight: bold;
+  }
+  
+  .uvYellow {
+    background-color: yellow;
+    font-weight: bold;
+    color: black;
+  }
+  
+  .uvGreen {
+    background-color: green;
+    font-weight: bold;
+    color: white;
+  }
+  
+  /* button styling */
+  .btn {
+    background: #3B3B6D;
+    color: #fff;
+  }
+  
+  #clearBtn{
+    margin-left: 90px;
+    margin-top: 1vw;
+  }
+  
+  /* 5 day forecast */
+  .card-forecast {
+    background-color: #B03B37;
+  }
+  
+  .five-forecast-title {
+    font-size: 1.5vw;
+    margin-bottom: 1vw;
+  }
+  
+  .forecast {
+    color: antiquewhite;
+    font-weight: bold;
+  }
+  
+  .card-title {
+    font-size: 1vw;
+  }
+  
+  .card-body h6 {
+    font-size: 1.25vw;
+    font-weight: bold;
+  }
+  
+  .card-subtitle {
+    font-size: .90rem;
+  }
+ 
