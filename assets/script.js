@@ -1,15 +1,16 @@
 /* Variables */
 var apiKey = "708b801eb3ec231e80bf6c6a79e0fafb";
-var apiUrl = "https://api.openweathermap.org/data/2.5/forecast?lat={lat}&lon={lon}&appid={API key}";
+var apiUrl = "https://api.openweathermap.org/data/3.0/onecall?lat={lat}&lon={lon}&exclude={part}&appid={API key}";
 var geoApiUrl = "https://openweathermap.org/forecast5";
 var exclude = "&exclude=minutely,hourly,alerts&units=imperial";
 var searchBtn = $("#searchBtn");
 var clearBtn = $("#clearBtn");
 var searchForm = $("#search-form");
 var cityInput = $("#searchCityName");
-var cityExample = "Phoenix";
+var cityExample = "[33.4998, -112.2832]";
 var day = 1;
-
+var lat = "33.4998=";
+var lon = "&-112.2832=";
 /* Load From Local Storage */
 function loadLocalStorage() {
     var storedArray = localStorage.getItem("citySearchStorage") ? JSON.parse(localStorage.getItem("citySearchStorage")) : []

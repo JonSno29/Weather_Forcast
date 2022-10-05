@@ -39,7 +39,7 @@ THEN I am again presented with current and future conditions for that
 city
 
 
-## LIVE LINK:coord [33.4998, -112.2832]
+## LIVE LINK:coord 
 
 
 
