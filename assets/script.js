@@ -1,16 +1,17 @@
 /* Variables */
-var apiKey = "708b801eb3ec231e80bf6c6a79e0fafb";
-var apiUrl = "https://api.openweathermap.org/data/3.0/onecall?lat={lat}&lon={lon}&exclude={part}&appid={API key}";
-var geoApiUrl = "https://openweathermap.org/forecast5";
+var apiKey = "a481929feec1c9b845af62b585630c7f";
+var apiUrl = "https://api.openweathermap.org/data/2.5/weather?";
+var geoApiUrl = "https://api.openweathermap.org/geo/1.0/direct?q=";
 var exclude = "&exclude=minutely,hourly,alerts&units=imperial";
 var searchBtn = $("#searchBtn");
 var clearBtn = $("#clearBtn");
 var searchForm = $("#search-form");
 var cityInput = $("#searchCityName");
-var cityExample = "[33.4998, -112.2832]";
+var cityExample = "Litchfield Park";
+var lat = "33.4934";
+var lon = "-112.3579";
 var day = 1;
-var lat = "33.4998=";
-var lon = "&-112.2832=";
+
 /* Load From Local Storage */
 function loadLocalStorage() {
     var storedArray = localStorage.getItem("citySearchStorage") ? JSON.parse(localStorage.getItem("citySearchStorage")) : []
@@ -29,7 +30,7 @@ function loadLocalStorage() {
   }
 }
 
-/* Search City */
+/* City Search */
 function searchCity(search) {
     search.preventDefault();
   
@@ -48,7 +49,7 @@ function searchCity(search) {
   /* current weather function */
 function currentForecast(currentCity) {
 
-    /* fetching geoApiUrl */
+    /* Fetch geoApiUrl */
     fetch(geoApiUrl + currentCity + "&appid=" + apiKey).then(function (response) {
       response.json().then(function (data) {
         
@@ -59,7 +60,7 @@ function currentForecast(currentCity) {
           console.log(currentData);
         
          /* USE MOMENT.JS TO SHOW DATE */
-         var currentDate = new Date(currentData.current.dt * 1000);
+         var currentDate = new Date;
          /* display searched city name */
          $("#city-search").text(
            currentCity + " " + moment(currentDate).format("dddd, MMMM Do YYYY")
@@ -107,7 +108,7 @@ function currentForecast(currentCity) {
 /* 5 day forecast function */
 function futureForecast(futureData) {
 
-    /* 5 day forecast cardZ */
+    /* 5 day forecast cards */
       $("#fiveDayForecast").empty();
       for (var i = 1; i < 6; i++) {
         /* display date using moment.js */

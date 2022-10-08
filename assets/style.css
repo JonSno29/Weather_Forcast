@@ -3,6 +3,12 @@ body {
     background-color: aqua;
   }
   
+  .jumbotron {
+    text-align: center;
+    background-color: transparent;
+    color: rgb(236, 109, 17);
+    border-bottom: 10px solid rgb(28, 87, 99);
+  }
   .weather-h1 {
     color: #B03B37;
     font-weight: bolder;
@@ -28,7 +34,7 @@ body {
   }
 
   /* uv styling */
-.uvRed {
+  .uvRed {
     background-color: red;
     color: white;
     font-weight: bold;
