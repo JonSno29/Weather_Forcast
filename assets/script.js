@@ -1,6 +1,6 @@
 /* Variables */
 var apiKey = "a481929feec1c9b845af62b585630c7f";
-var apiUrl = "https://api.openweathermap.org/data/2.5/weather?";
+var apiUrl = "https://api.openweathermap.org/data/2.5/forecast?";
 var geoApiUrl = "https://api.openweathermap.org/geo/1.0/direct?q=";
 var exclude = "&exclude=minutely,hourly,alerts&units=imperial";
 var searchBtn = $("#searchBtn");
@@ -83,21 +83,7 @@ function currentForecast(currentCity) {
          $("#humidity-now").text(
            "Humidity: " + currentData.current.humidity + " %"
          );
-         /* display current uv index */
-         $("#uv-now").text(currentData.current.uvi);
- 
-         //* uv level styling */
-         var uvClassName = "";
-         if (currentData.current.uvi < 3) {
-           uvClassName = "uvGreen";
-         } else if (currentData.current.uvi > 3 && currentData.current.uvi < 6) {
-           uvClassName = "uvYellow";
-         } else {
-           uvClassName = "uvRed";
-         }
-         $("#uv-now").removeClass("uvGreen uvYellow uvRed");
-         $("#uv-now").addClass(uvClassName);
- 
+              
          /* call 5 day forecast function */
          futureForecast(currentData);
         })

@@ -33,25 +33,6 @@ body {
     width: 50%;
   }
 
-  /* uv styling */
-  .uvRed {
-    background-color: red;
-    color: white;
-    font-weight: bold;
-  }
-  
-  .uvYellow {
-    background-color: yellow;
-    font-weight: bold;
-    color: black;
-  }
-  
-  .uvGreen {
-    background-color: green;
-    font-weight: bold;
-    color: white;
-  }
-  
   /* button styling */
   .btn {
     background: #3B3B6D;
