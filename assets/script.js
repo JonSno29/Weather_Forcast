@@ -1,8 +1,8 @@
 /* Variables */
 var apiKey = "a481929feec1c9b845af62b585630c7f";
-var apiUrl = "https://api.openweathermap.org/data/2.5/forecast?";
-var geoApiUrl = "https://api.openweathermap.org/geo/1.0/direct?q=";
-var exclude = "&exclude=minutely,hourly,alerts&units=imperial";
+// var apiUrl = "https://api.openweathermap.org/data/2.5/forecast?id=" + cityID + "&appid=" + APIKey;
+var geoApiUrl = "https://api.openweathermap.org/data/2.5/weather?q=";
+var exclude = "&units=imperial";
 var searchBtn = $("#searchBtn");
 var clearBtn = $("#clearBtn");
 var searchForm = $("#search-form");
@@ -50,66 +50,69 @@ function searchCity(search) {
 function currentForecast(currentCity) {
 
     /* Fetch geoApiUrl */
-    fetch(geoApiUrl + currentCity + "&appid=" + apiKey).then(function (response) {
-      response.json().then(function (data) {
-        
+    fetch(geoApiUrl + currentCity + "&appid=" + apiKey + exclude)
+    .then(function (response) {
+      response.json()
+      .then(function(data) {
+        var cityID = data.id
         /* using lat and lon from geoApiUrl and entering into onecall apiUrl */
-        fetch(apiUrl + "lat=" + data[0].lat + "&lon=" + data[0].lon + exclude + "&appid=" + apiKey).then(function (weatherData) {
-          return weatherData.json();
-        }).then(function (currentData) {
-          console.log(currentData);
-        
-         /* USE MOMENT.JS TO SHOW DATE */
-         var currentDate = new Date;
-         /* display searched city name */
-         $("#city-search").text(
-           currentCity + " " + moment(currentDate).format("dddd, MMMM Do YYYY")
-         );
-         /* add icon */
-         var iconCode = currentData.current.weather[0].icon;
-         $(".wicon").attr(
-           "src",
-           `http://openweathermap.org/img/w/${iconCode}.png`
-         );
-         /* display current */
-         $("#temp-now").text(
-           "Temperature: " + currentData.current.temp + " \u00B0F"
-         );
-         /* display current wind speed */
-         $("#wind-now").text(
-           "Wind Speed: " + currentData.current.wind_speed + " MPH"
-         );
-         /* display current humidity */
-         $("#humidity-now").text(
-           "Humidity: " + currentData.current.humidity + " %"
-         );
-              
-         /* call 5 day forecast function */
-         futureForecast(currentData);
-        })
+         fetch("https://api.openweathermap.org/data/2.5/forecast?id=" + cityID + "&appid=" + apiKey + exclude).then(function (weatherData) {
+           return weatherData.json();
+         }).then(function (currentData) {
+           console.log(currentData);
+      
+          /* USE MOMENT.JS TO SHOW DATE */
+          var currentDate = new Date;
+          /* display searched city name */
+          $("#city-search").text(
+            currentCity + " " + moment(currentDate).format("dddd, MMMM Do YYYY")
+          );
+          var iconCode = currentData.list[0].weather[0].icon
+          /* add icon */
+          var iconurl = "http://openweathermap.org/img/w/"
+          $(".wicon").attr(
+            "src",
+            `http://openweathermap.org/img/w/${iconCode}.png`
+          );
+          /* display current */
+          $("#temp-now").text(
+            "Temperature: " + currentData.list[0].main.temp + " \u00B0F"
+          );
+          /* display current wind speed */
+          $("#wind-now").text(
+            "Wind Speed: " + currentData.list[0].wind.speed + " MPH"
+          );
+          /* display current humidity */
+          $("#humidity-now").text(
+            "Humidity: " + currentData.list[0].main.humidity + " %"
+          );
+            
+          /* call 5 day forecast function */
+          futureForecast(currentData);
+         })
     })
 });
 }
 
 /* 5 day forecast function */
-function futureForecast(futureData) {
+function futureForecast(currentData) {
 
     /* 5 day forecast cards */
       $("#fiveDayForecast").empty();
-      for (var i = 1; i < 6; i++) {
+      for (var i = 0; i < 39; i += 8) {
         /* display date using moment.js */
-        var date = new Date(futureData.daily[i].dt * 1000)
+        //var date = new Date(futureData.daily[i].dt * 1000)
   
         /* dynamically creates 5 day forecast cards */
         var forecastCard = $("<div class='card col-md-2 col-sm-12 mb-2 card-forecast'></div>")
         forecastCard.html(`<div class="card-body forecast">
-        <h6 class="card-title" id="d1">${moment(date).format("ddd, M/D")}</h6>
-        <img alt="weather icon" src="http://openweathermap.org/img/w/${futureData.daily[i].weather[0].icon}.png"
+        <h6 class="card-title" id="d1">${moment(date).format("YYYYMMDD")}</h6>
+        <img alt="weather icon" src="http://openweathermap.org/img/w/${currentData.list[i].weather[0].icon}.png"
         <br>
-        <p class="card-subtitle pb-2">Temp: ${futureData.daily[i].temp.day} \u00B0F</p>
-        <p class="card-subtitle pb-2">Wind Speed: ${futureData.daily[i].wind_speed} MPH</p>
+        <p class="card-subtitle pb-2">Temp: ${currentData.list[i].main.temp} \u00B0F</p>
+        <p class="card-subtitle pb-2">Wind Speed: ${futureData.daily[i].wind.speed} MPH</p>
         <p class="card-subtitle pb-2">Humidity: ${futureData.daily[i].humidity} %</p>
-        </div>`);
+        </div>;`)
         $("#fiveDayForecast").append(forecastCard);
         day++
     }
