@@ -59,6 +59,10 @@ https://github.com/JonSno29/Weather_Forecast.git
 
 ## INSTALLATION, USAGE & MOCK-UP:
 
+![](assets/Screen%20Shot%202022-10-11%20at%201.23.23%20PM.png)
+
+![](assets/WeatherUP.gif)
+
 🎗 Terminal
 
 🎗 Git
