@@ -3,6 +3,9 @@
 
 ## OVERVIEW:
 
+Using third party API'S, I created a weather forecast that displays time, humidity, wind-speed and temperature.
+The local storage shows recent searches and more information about each city searched.
+
  
 
 ## User Story

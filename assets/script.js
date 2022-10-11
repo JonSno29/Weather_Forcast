@@ -88,7 +88,7 @@ function currentForecast(currentCity) {
           );
             
           /* call 5 day forecast function */
-          forecast(futureData);
+         futureForecast(futureData);
          })
     })
 });
