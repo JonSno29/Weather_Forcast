@@ -1,10 +1,12 @@
-# Weather_Forcast
+# Weather_Forecast
+
 
 ## OVERVIEW:
 
  
 
 ## User Story
+
 AS A traveler
 
 I WANT to see the weather outlook for multiple cities
@@ -40,15 +42,12 @@ THEN I am again presented with current and future conditions for that
 city
 
 
-## LIVE LINK:coord 
+## LIVE LINK:
 
 
 
 ## INSTALLATION, USAGE & MOCK-UP:
 
-🎗 Flexbox
-
-🎗 Media Queries
 
 🎗 Terminal
 
@@ -60,13 +59,15 @@ city
 
 🎗 Visual Studio (VS) Code 
 
-🎗 HTML Semantic Elements
+🎗 HTML 
 
-🎗 CSS VARIABLES
+🎗 CSS 
 
 🎗 Screencastify for mock-up GIF
  
+🎗  javaScript
 
+🎗 moment.js
 
 ## CREDITS:
 
