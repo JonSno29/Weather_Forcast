@@ -86,32 +86,29 @@ function currentForecast(currentCity) {
           $("#humidity-now").text(
             "Humidity: " + currentData.list[0].main.humidity + " %"
           );
-            
-          /* call 5 day forecast function */
-         futureForecast(currentData);
-         })
+          })
     })
 });
 }
 
 /* 5 day forecast function */
-function futureForecast(futureData) {
+function futureForecast(currentData) {
 
     /* 5 day forecast cards */
       $("#fiveDayForecast").empty();
       for (var i = 1; i < 6; i ++) {
         /* display date using moment.js */
-        //var date = new Date(futureData.daily[i].dt * 1000)
+        //var date = new Date(currentData.daily[i].dt * 1000)
   
         /* creates 5 day forecast cards */
         var forecastCard = $("<div class='card col-md-2 col-sm-12 mb-2 card-forecast'></div>")
         forecastCard.html(`<div class="card-body forecast">
         <h6 class="card-title" id="d1">${moment(date).format("ddd, M/D")}</h6>
-        <img alt="weather icon" src="http://openweathermap.org/img/w/${futureData.list[i].weather[0].icon}.png"
+        <img alt="weather icon" src="http://openweathermap.org/img/w/${currentData.list[i].weather[0].icon}.png"
         <br>
-        <p class="card-subtitle pb-2">Temp: ${futureData.list[i].temp.day} \u00B0F</p>
-        <p class="card-subtitle pb-2">Wind Speed: ${futureData.daily[i].wind.speed} MPH</p>
-        <p class="card-subtitle pb-2">Humidity: ${futureData.daily[i].main.humidity} %</p>
+        <p class="card-subtitle pb-2">Temp: ${currentData.list[i].temp.day} \u00B0F</p>
+        <p class="card-subtitle pb-2">Wind Speed: ${currentData.daily[i].wind.speed} MPH</p>
+        <p class="card-subtitle pb-2">Humidity: ${currentData.daily[i].main.humidity} %</p>
         </div>;`)
         $("#fiveDayForecast").append(forecastCard);
         day++

@@ -51,6 +51,8 @@ city
 
 ## INSTALLATION, USAGE & MOCK-UP:
 
+<i class="devicon-chrome-plain colored"></i>
+          
 
 🎗 Terminal
 
@@ -68,7 +70,7 @@ city
 
 🎗 Screencastify for mock-up GIF
  
-🎗  javaScript
+🎗 javaScript
 
 🎗 moment.js
 
