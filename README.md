@@ -5,9 +5,9 @@
 
 Using third party API'S, I created a weather forecast that displays time, humidity, wind-speed and temperature.
 The local storage shows recent searches and more information about each city searched.
+Unfortunately for me, The five day forecast is not showing up. In the near future, I will start this project all over.
 
  
-
 ## User Story
 
 AS A traveler
