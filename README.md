@@ -3,12 +3,15 @@
 
 ## OVERVIEW:
 
-Using third party API'S, I created a weather forecast that displays time, humidity, wind-speed and temperature.
-The local storage shows recent searches and more information about each city searched.
-Unfortunately for me, The five day forecast is not showing up. In the near future, I will start this project all over.
+Using the OpenWeather API, I created a weather forecast that displays time, humidity, wind-speed and temperature.
 
- 
-## User Story
+The OpenWeather API, retrieves weather data, the local storage shows recent searches and more information about each 
+
+city searched. Unfortunately for me, The five day forecast is not showing up. In the near future, I will start this 
+
+project all over.
+
+ ## User Story
 
 AS A traveler
 
@@ -40,19 +43,21 @@ icon representation of weather conditions, the temperature, the wind
 
 speed, and the humidity WHEN I click on a city in the search history
 
-THEN I am again presented with current and future conditions for that 
-
-city
-
+THEN I am again presented with current and future conditions for that city.
 
 ## LIVE LINK:
+
+Weather_Forecast Webpage: 
+
+https://jonsno29.github.io/Weather_Forecast/
+
+Weather_Forecast Repository: 
+
+https://github.com/JonSno29/Weather_Forecast.git
 
 
 
 ## INSTALLATION, USAGE & MOCK-UP:
-
-<i class="devicon-chrome-plain colored"></i>
-          
 
 🎗 Terminal
 
@@ -74,12 +79,13 @@ city
 
 🎗 moment.js
 
+🎗 API key
+
 ## CREDITS:
 
-My fellow bootcampers at the U Of M, it's always fun collaborating with eachother.
+https://openweathermap.org/
 
-
-
+The Instructors and fellow bootcampers at the U Of M, it's always fun collaborating with eachother.
 
 # LICENSE:
 
@@ -93,7 +99,11 @@ MIT LICENSE
 
 🎗 Visually appealing.
 
-🎗 Uses feature to jump from link to link.
+🎗 Displays the date.
+
+🎗 The API retrieves weather data.
+
+🎗 Fetches temperature, wind-speed, humidity and displays rain or shine icons.
 
 🎗 These features enhance user experience.
 
@@ -107,6 +117,8 @@ Use the "scout rule" to help others.
 ## TESTS:
 
 🎗 Trial and error
+
+🎗 VScode to test my code
 
 🎗 Research
 

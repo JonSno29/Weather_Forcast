@@ -69,10 +69,10 @@ function currentForecast(currentCity) {
           );
           var iconCode = currentData.list[0].weather[0].icon
           /* add icon */
-          var iconurl = "http://openweathermap.org/img/w/"
+          var iconurl = "https://openweathermap.org/img/w/"
           $(".wicon").attr(
             "src",
-            `http://openweathermap.org/img/w/${iconCode}.png`
+            `https://openweathermap.org/img/w/${iconCode}.png`
           );
           /* display current */
           $("#temp-now").text(
