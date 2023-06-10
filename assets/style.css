@@ -60,6 +60,11 @@ body {
     font-weight: bold;
   }
   
+.5-dayForecast  {
+    color: antiquewhite;
+    font-weight: bold;
+  }
+
   .card-title {
     font-size: 1vw;
   }
