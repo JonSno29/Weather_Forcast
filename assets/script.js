@@ -13,7 +13,7 @@ var lat = "33.4934";
 var lon = "-112.3579";
 var day = 1;
 var fetchButton = document.getElementById('fetch-button');
-let APIKey = "4f98d51b3cf65b1d6a6eb628e4d0f9f5";
+let APIKey = "a481929feec1c9b845af62b585630c7f";
 let searchHistory = [];
 
 function addSearchHistory(city){
