@@ -3,21 +3,21 @@
 
 ## OVERVIEW:
 
-Using the OpenWeather API, I created a weather forecast that displays time, humidity, wind-speed and temperature.
+Using the OpenWeather API, I created a weather forecast that displays time, 
 
-The OpenWeather API, retrieves weather data, the local storage shows recent searches and more information about each 
+humidity, wind-speed and temperature. The OpenWeather API, retrieves weather data, 
 
-city searched. Unfortunately for me, The five day forecast is not showing up. In the near future, I will start this 
+the local storage shows recent searches and more information about each 
 
-project all over.
+city searched. 
 
  ## User Story
 
-AS A traveler
+AS A traveler,
 
-I WANT to see the weather outlook for multiple cities
+I WANT to see the weather outlook for multiple cities,
 
-SO THAT I can plan a trip accordingly
+SO THAT I can plan a trip accordingly.
 
 ## Acceptance Criteria
 
