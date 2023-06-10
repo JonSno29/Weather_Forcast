@@ -29,81 +29,67 @@
     <p class="lead">A SIMPLE APPLICATION FOR THE WEATHER FORECAST</p>
     <p id="currentDay" class="lead"></p>
   </header>
-    
-    <main class="container">
-        <h1><i class="fa-solid fa-temperature-quarter"></i><span class="weather-h1">Weather </span> dashboard</h1>
+    <div class="container">
         <div class="row">
-            
-            
-            <aside class="col-sm-3">
-                <!--Search City-->
-                <div class="card">
-                    <h3 class="card-header">SEARCH BY CITY</h3>
-                    <form id="search-form" class="card-body">
-                      <label class="form-label" for="cityName"></label>
-                      <input name="cityName" id="searchCityName" type="text" autofocus="true" />
-                      <button id="searchBtn" class="btn px-3"><i class="fa-solid fa-magnifying-glass-location"></i></button>
-                    </form>
-                  </div>
-                 
-                  <!--Search History-->
-                <div class="card"> 
-                  <div class="card-body" id="searchHistory">
-                      <div id="search-history-card" class="card border-light">
-                        <h4 id="search-history-header" class="card-header">RECENT SEARCHES</h4>
-                    
-                        <div class="flex">
-                          <div class="list-group list-group-flush" id="searchHistoryList"></div>
-
-                        <!--Clear Search History-->
-                        <button id="clearBtn" class="btn px-5"><i class="fa-solid fa-eraser"></i></button>
-                    </div>
+            <aside class="col-md-3 pb-2 ">
+                <h2>Search a city:</h2>
+                <form action="">
+                    <input name="cityInput" id="cityInput" type="text" autofocus="true" class="form-input" />
+                    <button type="submit" class="btn text-center bg-dark" id="fetch-button">Search</button>
+                </form>
+                <div id="searchHistory" class="btn-group-vertical d-grid gap-2 col-3 ">
                 </div>
-             </div>
+            </aside>
+            <div class="col-md-9 pb-2">
+            <section id="current">
+                <h4 id="city"></h4>
+                <img id="icon" src="" alt=""></img>
+                <p id="temp"></p>
+                <p id="wind"></p>
+                <p id="humidity"></p>
+            </section>
+            <section id="5-dayForecast" class="row">
+                <h2>5-Day forecast</h2>
+                <div id="dayOne" class="col-md-2 m-2">
+                    <p id="dateDayOne"></p>
+                    <img id="iconDayOne" src="" alt=""></img>
+                    <p id="tempDayOne"></p>
+                    <p id="windDayOne"></p>
+                    <p id="humidityDayOne"></p>
+                </div>
+                <div id="dayTwo" class="col-md-2 m-2">
+                    <p id="dateDayTwo" ></p>
+                    <img id="iconDayTwo" src="" alt=""></img>
+                    <p id="tempDayTwo"></p>
+                    <p id="windDayTwo"></p>
+                    <p id="humidityDayTwo"></p>
+                </div>
+                <div id="dayThree" class="col-md-2 m-2">
+                    <p id="dateDayThree"></p>
+                    <img id="iconDayThree" src="" alt=""></img>
+                    <p id="tempDayThree"></p>
+                    <p id="windDayThree"></p>
+                    <p id="humidityDayThree"></p>
+                </div>
+                <div id="dayFour" class="col-md-2 m-2">
+                    <p id="dateDayFour"></p>
+                    <img id="iconDayFour" src="" alt=""></img>
+                    <p id="tempDayFour"></p>
+                    <p id="windDayFour"></p>
+                    <p id="humidityDayFour"></p>
+                </div>
+                <div id="dayFive" class="col-md-2 m-2">
+                    <p id="dateDayFive"></p>
+                    <img id="iconDayFive" src="" alt=""></img>
+                    <p id="tempDayFive"></p>
+                    <p id="windDayFive"></p>
+                    <p id="humidityDayFive"></p>
+                </div>
+            </section>
             </div>
-         </aside>
-
-        <section class="col-sm-9 container">
-        <div class="col-md-12 col-sm-12"></div>
-
-             <!-- Current Weather Data -->
-          <div class="card border-2 border-dark bg-transparent">
-            <div class="card-body">
-              <div class="d-flex d-inline">
-                <h3 class="card-title-now">
-                  <span id="city-search" class="text-capitalize"></span>
-                </h3>
-              </div>
-              <div class="d-flex">
-                <div class="w-50">
-                  <p class="card-subtitle-now pb-2 pt-2" id="temp-now"></p>
-                  <p class="card-subtitle-now pb-2" id="wind-now"></p>
-                  <p class="card-subtitle-now pb-2" id="humidity-now"></p>
-                  <div class="d-flex flex-row">
-                  </div>
-                </div>
-                <div class="w-50">
-                  <img src="" alt="weather icon" class="wicon">
-                </div>
-              </div>
-            </div>
-          </div>
-        <!-- 5 day forecast section -->
-        <div class="card bg-transparent mt-5 border-0">
-          <h3 class="five-forecast-title text-center card-header">FIVE DAY WEATHER FORECAST</h3>
-          <div class="row d-flex justify-content-around" id="fiveDayForecast">
-            <!-- INSERT CARDS WITH JS FOR NEXT 5 DAYS -->
-          </div>
         </div>
-    </section>
-
-  </div>
-       
-         
- </main>
-
-     
- 
+    </div>
+   
  
  
  <!-- jQuery link -->
