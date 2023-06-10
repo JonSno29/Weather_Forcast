@@ -1,6 +1,6 @@
 body {
     font-family: 'Darker Grotesque', sans-serif;
-    background-color: aqua;
+    background-color: orange;
   }
   
   .jumbotron {
@@ -15,12 +15,12 @@ body {
   }
   
   .card-header {
-    background: #FBAB34;
+    background: aqua;
     text-align: center;
   }
   
   #searchCityName {
-    width: 75%;
+    width: 85%;
   }
   
   .flex {
@@ -31,12 +31,13 @@ body {
   
   .wicon {
     width: 50%;
+      height: 50%;
   }
 
   /* button styling */
   .btn {
     background: #3B3B6D;
-    color: #fff;
+    color: gold;
   }
   
   #clearBtn{
