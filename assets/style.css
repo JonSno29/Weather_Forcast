@@ -1,4 +1,4 @@
-body {
+.body {
     font-family: 'Darker Grotesque', sans-serif;
     background-color: orange;
   }
@@ -61,7 +61,7 @@ body {
   }
   
 .5-dayForecast  {
-    color: antiquewhite;
+    background-color: antiquewhite;
     font-weight: bold;
   }
 
